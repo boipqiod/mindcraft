@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mindcraft/build/static/css/main.d6f49806.css",
-    "main.js": "/mindcraft/build/static/js/main.2b0b958e.js",
+    "main.js": "/mindcraft/build/static/js/main.e651042e.js",
     "static/js/787.32704ee0.chunk.js": "/mindcraft/build/static/js/787.32704ee0.chunk.js",
     "static/media/demo3.png": "/mindcraft/build/static/media/demo3.dcd4cf09be521eff04fb.png",
     "static/media/demo10.png": "/mindcraft/build/static/media/demo10.0851f31bb2c0b79a3752.png",
@@ -15,11 +15,11 @@
     "static/media/demo2.png": "/mindcraft/build/static/media/demo2.1799f4963b7d9285a7c4.png",
     "index.html": "/mindcraft/build/index.html",
     "main.d6f49806.css.map": "/mindcraft/build/static/css/main.d6f49806.css.map",
-    "main.2b0b958e.js.map": "/mindcraft/build/static/js/main.2b0b958e.js.map",
+    "main.e651042e.js.map": "/mindcraft/build/static/js/main.e651042e.js.map",
     "787.32704ee0.chunk.js.map": "/mindcraft/build/static/js/787.32704ee0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d6f49806.css",
-    "static/js/main.2b0b958e.js"
+    "static/js/main.e651042e.js"
   ]
 }

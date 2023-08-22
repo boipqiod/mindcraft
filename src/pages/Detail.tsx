@@ -5,9 +5,6 @@ import i_play from "../assets/i-play-g.png";
 import i_share from "../assets/i-share-g.png";
 import React from "react";
 import {useShare} from "../hooks/utils/useShare";
-import {Helmet} from "react-helmet";
-import logo from "../assets/i-logo.png"
-
 export const Detail = () => {
     const {item, toBack} = useDetail()
     const {share} = useShare()
@@ -18,13 +15,6 @@ export const Detail = () => {
     }
     return (
         <>
-            <Helmet>
-                <meta property="og:url" content={window.location.href}/>
-                <meta property="og:title" content="MindCraft"/>
-                <meta property="og:type" content="website"/>
-                <meta property="og:image" content={logo}/>
-                <meta property="og:description" content="여러 테스트를 만들고 친구들과 공유해보세요!"/>
-            </Helmet>
 
             <Stack
                 pos={"relative"}
