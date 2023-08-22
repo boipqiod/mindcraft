@@ -7,7 +7,6 @@ import React from "react";
 import {MainItemScrollList} from "../components/MainItem/MainItemScrollList";
 import {useMain} from "../hooks/useMain";
 import {Helmet} from "react-helmet";
-import logo from "../assets/i-logo.png";
 
 
 export const Main = () => {
@@ -20,7 +19,7 @@ export const Main = () => {
                 <meta property="og:url" content={window.location.href}/>
                 <meta property="og:title" content="MindCraft"/>
                 <meta property="og:type" content="website"/>
-                <meta property="og:image" content={logo}/>
+                <meta property="og:image" content={"https://boipqiod.github.io/mindcraft/build/static/media/demo3.dcd4cf09be521eff04fb.png"}/>
                 <meta property="og:description" content="여러 테스트를 만들고 친구들과 공유해보세요!"/>
             </Helmet>
 
