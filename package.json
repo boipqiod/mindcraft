@@ -1,6 +1,6 @@
 {
   "name": "mindcraft",
-  "homepage": "https://boipqiod.github.io/mindcraft/",
+  "homepage": "https://boipqiod.github.io/mindcraft",
   "version": "0.1.0",
   "dependencies": {
     "@chakra-ui/react": "^2.8.0",
