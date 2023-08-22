@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="MindCraft is a web application that allows you to create test and share them with your friends!"
+    />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>MindCraft</title>
+    <script>
+      // SPAs의 정확한 경로를 찾아 리다이렉트 합니다.
+      let segment = 0;
+      let location = window.location;
+      let path = location.href.substring(location.protocol.length + location.host.length + location.pathname.length);
+      let segments = location.pathname.split('/');
+      let lastSegment = segments.pop();
+
+      if (lastSegment === '404.html' || segments[segment] !== 'mindcraft' || segments[segment + 1] !== 'build') {
+        segment = segment - 1;
+      }
+      let destination = '/' + segments.slice(1, segment + 1).join('/') + '/#' + path;
+
+      location.replace(destination);
+    </script>
+
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <div id="indicator"
+         style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.26);">
+    </div>
+  </body>
+</html>
