@@ -4,6 +4,7 @@ export namespace request {
             email: string
             password: string
         }
+
         export type register = {
             email: string
             password: string

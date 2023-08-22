@@ -5,6 +5,7 @@ import i_play from "../assets/i-play-g.png";
 import i_share from "../assets/i-share-g.png";
 import React from "react";
 import {useShare} from "../hooks/utils/useShare";
+import {Helmet} from "react-helmet";
 export const Detail = () => {
     const {item, toBack} = useDetail()
     const {share} = useShare()
@@ -15,6 +16,12 @@ export const Detail = () => {
     }
     return (
         <>
+            <Helmet>
+                <meta property="og:title" content={item?.title}/>
+                <meta property="og:image" content={"https://boipqiod.github.io/mindcraft/build/static/media/demo10.0851f31bb2c0b79a3752.png"}/>
+                <meta property="og:description" content={item?.description}/>
+            </Helmet>
+
 
             <Stack
                 pos={"relative"}

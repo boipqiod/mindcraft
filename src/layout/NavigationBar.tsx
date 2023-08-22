@@ -7,6 +7,7 @@ import {Avatar} from '@chakra-ui/react'
 import logo from '../assets/mindcraft_logo.png';
 import {usePage} from "../hooks/utils/usePage";
 import {AuthContext} from "../context/AuthProvider";
+import {colors} from "../types/common";
 
 export const NavigationBar = () => {
     const {auth, setAuth} = React.useContext(AuthContext)!
@@ -29,7 +30,18 @@ export const NavigationBar = () => {
     }
 
     return (
-        <Box className="navigation-bar">
+        <Box
+            pos={"fixed"}
+            bg={colors.primary}
+            display={"flex"}
+            justifyContent={"space-between"}
+            alignItems={"center"}
+            p={5}
+            zIndex={10}
+            w={"100%"}
+            maxW={720}
+            h={{base: "40px", md: "60px"}}
+        >
             <Image
                 width={150}
                 objectFit='scale-down'

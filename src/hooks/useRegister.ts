@@ -3,7 +3,6 @@ import {useSteps} from "@chakra-ui/react";
 import {FromUtil} from "../utils/FromUtil";
 import {usePage} from "./utils/usePage";
 import {AuthService} from "../service/AuthService";
-import {Requester} from "../utils/Requester";
 import Logger from "../utils/Logger";
 
 const steps = [
@@ -17,9 +16,6 @@ export const useRegister = () => {
         index: 0,
         count: steps.length,
     })
-
-    const requester: Requester = Requester.instance
-    const service = new AuthService(requester)
 
     const {toMain} = usePage()
 
@@ -88,7 +84,7 @@ export const useRegister = () => {
             return;
         }
         setLoadingRegister(true)
-        const res = await service.requestCode(email)
+        const res = await AuthService.requestCode(email)
         setLoadingRegister(false)
         if (res.isSuccess) {
             Logger.info(email, emailCode, password, nickname, image)

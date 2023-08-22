@@ -19,8 +19,9 @@ export const AppRoutes = () => {
 
                     <Route path='/signin' element={<SignIn />}/>
                     <Route path='/register' element={<Register />}/>
+
+                    <Route path='/creact' element={<PrivateRoutes />}/>
                 </Routes>
-                <PrivateRoutes />
             </AppLayout>
         </HashRouter>
     )

@@ -25,6 +25,7 @@ export namespace response {
             accessToken: string
             refreshToken: string
         }
+
         export type register = {
             id: number
             email: string

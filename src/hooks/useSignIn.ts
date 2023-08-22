@@ -1,7 +1,6 @@
 import React, {useEffect} from "react";
 import {AuthContext} from "../context/AuthProvider";
 import {usePage} from "./utils/usePage";
-import {Requester} from "../utils/Requester";
 import {AuthService} from "../service/AuthService";
 
 export const useSignIn = () => {
@@ -9,8 +8,6 @@ export const useSignIn = () => {
     const [show, setShow] = React.useState(false)
     const {toMain} = usePage()
 
-    const requester: Requester = Requester.instance
-    const service = new AuthService(requester)
 
     useEffect(() => {
         auth && toMain()
@@ -21,9 +18,7 @@ export const useSignIn = () => {
 
     const signIn = async (email: string, password: string) => {
 
-
-
-        const res = await service.signIn(email, password)
+        const res = await AuthService.signIn(email, password)
         if(res.isSuccess){
             setAuth(true)
             toMain()
@@ -33,10 +28,14 @@ export const useSignIn = () => {
         }
     }
 
+    const signOut = () => {
+
+    }
+
     return {
         show, setShow,
 
         handleClick,
-        signIn
+        signIn, signOut
     }
 }
