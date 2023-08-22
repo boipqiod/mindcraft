@@ -10,7 +10,7 @@ import {PrivateRoutes} from "./PrivateRoutes";
 export const AppRoutes = () => {
 
     return (
-        <BrowserRouter>
+        <BrowserRouter  basename="/mindcraft/build">
             <AppLayout>
                 <Routes>
                     <Route path='/' element={<Main />}/>
