@@ -3,6 +3,7 @@ import {AppRoutes} from "./routes/AppRoutes";
 import {ChakraProvider, extendTheme} from '@chakra-ui/react'
 import {AuthProvider} from "./context/AuthProvider";
 import {TestProvider} from "./context/TestProvider";
+import { HelmetProvider } from 'react-helmet-async';
 
 const theme = extendTheme({
     breakpoints:{
@@ -25,11 +26,14 @@ const theme = extendTheme({
 function App() {
   return (
       <ChakraProvider theme={theme}>
-          <TestProvider>
-              <AuthProvider>
-                  <AppRoutes/>
-              </AuthProvider>
-          </TestProvider>
+          <HelmetProvider>
+              <TestProvider>
+                  <AuthProvider>
+                      <AppRoutes/>
+                  </AuthProvider>
+              </TestProvider>
+          </HelmetProvider>
+
       </ChakraProvider>
   );
 }

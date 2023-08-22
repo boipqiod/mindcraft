@@ -1,5 +1,5 @@
 import React from "react";
-import {Routes, Route, HashRouter} from "react-router-dom";
+import {Routes, Route, HashRouter, BrowserRouter} from "react-router-dom";
 import {AppLayout} from "../layout/AppLayout";
 import {Main} from "../pages/Main";
 import {SignIn} from "../pages/SignIn";
@@ -10,7 +10,7 @@ import {PrivateRoutes} from "./PrivateRoutes";
 export const AppRoutes = () => {
 
     return (
-        <HashRouter>
+        <BrowserRouter>
             <AppLayout>
                 <Routes>
                     <Route path='/' element={<Main />}/>
@@ -23,6 +23,6 @@ export const AppRoutes = () => {
                     <Route path='/creact' element={<PrivateRoutes />}/>
                 </Routes>
             </AppLayout>
-        </HashRouter>
+        </BrowserRouter>
     )
 }
