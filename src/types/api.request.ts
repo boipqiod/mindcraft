@@ -1,6 +1,6 @@
 export namespace request {
     export namespace auth {
-        export type signIn ={
+        export type signIn = {
             email: string
             password: string
         }
@@ -17,5 +17,24 @@ export namespace request {
         export type requestCodeSubmit = {
             code: string
         }
+    }
+
+    export namespace test {
+        export type getTestDetail = {
+            id: number
+        }
+
+        export type createTest = {
+            title: string
+            description: string
+            query: {
+                step: number
+                text: string
+                answer: {
+                    text: string
+                }[]
+            }[]
+        }
+
     }
 }

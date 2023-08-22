@@ -39,7 +39,7 @@ export class Requester {
         return config
     }
 
-    request = async <T, U>(apiConfig: ApiConfig, data: T): Promise<APIResponse<U>> => {
+    request = async <T, U>(apiConfig: ApiConfig, data?: T): Promise<APIResponse<U>> => {
 
         const config = this.setConfig(apiConfig, data)
 

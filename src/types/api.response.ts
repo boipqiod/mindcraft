@@ -39,4 +39,44 @@ export namespace response {
             isSuccessful: boolean
         }
     }
+
+    export namespace test {
+        export type testItem = {
+            id: number
+            title: string
+            description: string
+            queryStep: string // 총 질문 수
+            userId: number
+            playedCount: number
+            sharedCount: number
+            url: string // 이미지 url
+            createdAt: string
+        }[]
+
+        export type testItemDetail = {
+            testItem: testItem
+            query: {
+                id: number
+                testId: number
+                step: number
+                text: string
+                answer: {
+                    id: number
+                    queryId: number
+                    text: string
+                }[]
+            }[]
+        }
+        export type testItemCreate = {
+            id: number
+            title: string
+            description: string
+            queryStep: string // 총 질문 수
+            userId: number
+            playedCount: number
+            sharedCount: number
+            url: string // 이미지 url
+            createdAt: string
+        }
+    }
 }

@@ -18,12 +18,11 @@ export enum httpContentType {
 
 
 export namespace APIConfig {
-    export namespace auth{
+    export namespace auth {
         export const signIn: ApiConfig = {
             method: httpMethod.post,
             url: "/auth/sign-in"
         }
-
         export const register: ApiConfig = {
             method: httpMethod.post,
             url: "/auth/register",
@@ -36,6 +35,20 @@ export namespace APIConfig {
         export const requestCodeSubmit: ApiConfig = {
             method: httpMethod.post,
             url: "/auth/request-code-submit"
+        }
+    }
+    export namespace test {
+        export const getTestList: ApiConfig = {
+            method: httpMethod.get,
+            url: "/mindTestes"
+        }
+        export const getTestDetail: ApiConfig = {
+            method: httpMethod.get,
+            url: "/mindTestes/:id"
+        }
+        export const createTest: ApiConfig = {
+            method: httpMethod.post,
+            url: "/mindTest"
         }
     }
 }

@@ -3,8 +3,14 @@
   <head>
     <meta charset="utf-8" />
 
-    <meta property="og:type" content="website"/>
+    <script>
+      if(window.location.url.include('test')){
+        //메타데이터 수정
+        document.querySelector('meta[name="og:title"]').setAttribute("content", "테스트 제목");
+      }
+    </script>
 
+    <meta property="og:type" content="website"/>
     <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="theme-color" content="#80A9A3" />
