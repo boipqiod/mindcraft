@@ -17,7 +17,7 @@ export const Detail = () => {
     return (
         <>
             <Helmet>
-                <title>MindCraft: {item?.title}</title>
+                <title>MindCraft: {item?.title ?? ""}</title>
                 <meta property="og:title" content={item?.title}/>
                 <meta property="og:image" content={"https://boipqiod.github.io/mindcraft/build/static/media/demo10.0851f31bb2c0b79a3752.png"}/>
                 <meta property="og:description" content={item?.description}/>
