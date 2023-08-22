@@ -62,7 +62,7 @@ export const MainItem = (props: MainItemProps) => {
     return (
         <Box
             pos={"relative"}
-            aspectRatio={{base: 1, sm: 1}}
+            aspectRatio={{base: 3/4.8, sm: 3/4.8}}
             minW={{base: "100%", sm: "calc(100%/2 - 14px)", md: "calc(100%/3 - 14px)"}}
             w={{base: "100%", sm: "calc(100%/2 - 14px)", md: "calc(100%/3 - 14px)"}}
             boxShadow={"0px 4px 4px 0px rgba(0, 0, 0, 0.25);"}
@@ -82,14 +82,13 @@ export const MainItem = (props: MainItemProps) => {
                 height={"100%"}
                 onClick={onClick}
                 cursor={"pointer"}
-
             >
-
                 {/*사진 영역*/}
                 <AspectRatio
                     width={"100%"}
                     height={"75%"}
                     m={0}
+                    ratio={3/4}
                 >
                     <Image src={props.url}/>
                 </AspectRatio>

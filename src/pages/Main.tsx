@@ -9,7 +9,6 @@ import {useMain} from "../hooks/useMain";
 
 
 export const Main = () => {
-
     const main = useMain()
 
     return (
