@@ -8,7 +8,7 @@ import {Detail} from "../pages/Detail";
 
 export const AppRoutes = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <AppLayout>
                 <Routes>
                     <Route path='/' element={<Main />}/>
