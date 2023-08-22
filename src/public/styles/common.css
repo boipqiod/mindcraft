@@ -1,0 +1,13 @@
+root{
+    font-size: 12px;
+}
+
+@media (max-width: 720px) {
+    .container{
+        max-width: 100%;
+    }
+    .content {
+        padding: 20px 20px 100px 20px;
+        width: 95%;
+    }
+}
