@@ -1,9 +1,9 @@
 import { Box } from '@chakra-ui/react';
-import { MindTest } from '../../types/common';
+import { MindTestItem } from '../../types/common';
 import { MainItem } from './MainItem';
 
 type MainItemListProps = {
-    items: MindTest[];
+    items: MindTestItem[];
 }
 
 export const MainItemScrollList = (props: MainItemListProps) => {
