@@ -23,18 +23,29 @@ export class Requester {
     }
 
     private setConfig = <T>(apiConfig: ApiConfig, data: T): AxiosRequestConfig => {
+        let url = apiConfig.url;
+
+        const _data = data as Record<string, string>
+        if (_data) {
+            for (const [key, value] of Object.entries(_data)) {
+                if(url.includes(`:${key}`)) {
+                    url = url.replace(`:${key}`, value);
+                    delete _data[key];
+                }
+            }
+        }
 
         const config: AxiosRequestConfig = {
             method: apiConfig.method,
-            url: apiConfig.url
+            url: url
         }
 
         //get 일때 prams 로 셋팅
-        if (apiConfig.method === httpMethod.get) config.params = data
+        if (apiConfig.method === httpMethod.get) config.params = _data
         //form 데이터면 데이터 form 데이터로 변환
-        else if (apiConfig.contentType === httpContentType.form) config.data = this.transToFromData(data)
+        else if (apiConfig.contentType === httpContentType.form) config.data = this.transToFromData(_data)
         //나머지는 그냥 데이터 적용
-        else config.data = data
+        else config.data = _data
 
         return config
     }
