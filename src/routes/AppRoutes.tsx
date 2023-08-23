@@ -10,7 +10,7 @@ import {PrivateRoutes} from "./PrivateRoutes";
 export const AppRoutes = () => {
 
     return (
-        <HashRouter  basename="/mindcraft/build">
+        <HashRouter>
             <AppLayout>
                 <Routes>
                     <Route path='/' element={<Main />}/>
