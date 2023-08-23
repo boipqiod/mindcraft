@@ -1,10 +1,10 @@
 import React from 'react';
 import { Wrap } from "@chakra-ui/react";
 import { MainItem } from "./MainItem";
-import { MindTest } from '../../types/common';
+import { MindTestItem } from '../../types/common';
 
 type MainItemListProps = {
-    items: MindTest[];
+    items: MindTestItem[];
     scroll?: boolean;
 }
 

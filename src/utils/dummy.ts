@@ -1,4 +1,4 @@
-import { MindTest } from "../types/common";
+import { MindTestItem } from "../types/common";
 
 import demo1 from "../assets/demo1.png";
 import demo2 from "../assets/demo2.png";
@@ -12,13 +12,13 @@ import demo9 from "../assets/demo9.png";
 import demo10 from "../assets/demo10.png";
 
 
-export const dummyBest: MindTest[] = [
+export const dummyBest: MindTestItem[] = [
     { id: 10, title: "커뮤니케이션 스킬 테스트", playedCount: 500, sharedCount: 35, description: "커뮤니케이션 능력을 평가해보세요.", url: demo4, userId: 110 },
     { id: 7, title: "리더십 스타일 테스트", playedCount: 350, sharedCount: 25, description: "당신의 리더십 스타일을 파악해보세요.", url: demo2, userId: 107 },
     { id: 17, title: "자기계발 의지 테스트", playedCount: 350, sharedCount: 25, description: "자기계발에 대한 당신의 의지를 확인해보세요.", url: demo9, userId: 117 },
     { id: 16, title: "팀워크 능력 테스트", playedCount: 400, sharedCount: 30, description: "팀에서의 역할과 능력을 알아보세요.", url: demo3, userId: 116 },
 ];
-export const dummy: MindTest[] = [
+export const dummy: MindTestItem[] = [
     { id: 1, title: "성격 유형 테스트", playedCount: 150, sharedCount: 10, description: "당신의 성격 유형을 알아보세요.당신의 성격 유형을 알아보세요.당신의 성격 유형을 알아보세요.당신의 성격 유형을 알아보세요.당신의 성격 유형을 알아보세요.당신의 성격 유형을 알아보세요.당신의 성격 유형을 알아보세요.당신의 성격 유형을 알아보세요.당신의 성격 유형을 알아보세요.당신의 성격 유형을 알아보세요.당신의 성격 유형을 알아보세요.당신의 성격 유형을 알아보세요.당신의 성격 유형을 알아보세요.당신의 성격 유형을 알아보세요.당신의 성격 유형을 알아보세요.당신의 성격 유형을 알아보세요.", url: demo5, userId: 101 },
     { id: 2, title: "직업 적성 테스트", playedCount: 300, sharedCount: 25, description: "당신에게 어울리는 직업은 무엇일까요?", url: demo3, userId: 102 },
     { id: 3, title: "사랑 언어 테스트", playedCount: 200, sharedCount: 15, description: "당신의 사랑 언어를 찾아보세요.", url: demo8, userId: 103 },
