@@ -6,11 +6,12 @@ import {SignIn} from "../pages/SignIn";
 import {Register} from "../pages/Register";
 import {Detail} from "../pages/Detail";
 import {PrivateRoutes} from "./PrivateRoutes";
+import {Create} from "../pages/Create";
 
 export const AppRoutes = () => {
 
     return (
-        <BrowserRouter  basename="/mindcraft/build">
+        <BrowserRouter basename="/mindcraft/build">
             <AppLayout>
                 <Routes>
                     <Route path='/' element={<Main />}/>
@@ -20,7 +21,7 @@ export const AppRoutes = () => {
                     <Route path='/signin' element={<SignIn />}/>
                     <Route path='/register' element={<Register />}/>
 
-                    <Route path='/creact' element={<PrivateRoutes />}/>
+                    <Route path='/create' element={<Create />}/>
                 </Routes>
             </AppLayout>
         </BrowserRouter>
