@@ -25,6 +25,7 @@ export class Requester {
     private setConfig = <T>(apiConfig: ApiConfig, data: T): AxiosRequestConfig => {
         let url = apiConfig.url;
 
+        //URL Placeholder 적용
         const _data = data as Record<string, string>
         if (_data) {
             for (const [key, value] of Object.entries(_data)) {
