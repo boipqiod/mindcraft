@@ -1,14 +1,14 @@
 import { useContext } from "react";
 import { TestContext } from "../context/TestProvider";
-import { MindTest } from "../types/common";
+import { MindTestItem } from "../types/common";
 
 export const useTest = () => {
     const context = useContext(TestContext)!
 
-    const getTestList = (): MindTest[] => {
+    const getTestList = (): MindTestItem[] => {
         return context.testItemList
     }
-    const getTestDetail = (id: number): MindTest | undefined => {
+    const getTestDetail = (id: number): MindTestItem | undefined => {
         return context.testItemList.find(test => test.id === id)
     }
 

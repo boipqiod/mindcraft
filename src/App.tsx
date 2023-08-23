@@ -13,7 +13,7 @@ const theme = extendTheme({
     styles: {
         global: {
             html: {
-                fontSize: '12px',
+                fontSize: '14px',
                 backgroundColor: "#d9d9d9",
                 width: "100vw",
                 display: "flex",

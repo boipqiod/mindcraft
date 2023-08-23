@@ -9,7 +9,7 @@ export enum colors {
 
 /**** 메인 아이템 관련 ****/
 
-export type MindTest = {
+export type MindTestItem = {
     id: number;
     title: string;
     playedCount: number;
@@ -17,4 +17,21 @@ export type MindTest = {
     description: string;
     url: string;
     userId: number;
+}
+
+export type MindTestResultItem = {
+    title: string
+    description: string
+    image: string
+}
+
+export type MindTestQueryItem = {
+    step: number
+    text: string
+    answers: MindTestAnswerItem[]
+}
+
+export type MindTestAnswerItem = {
+    text: string
+    resultIndex: number
 }

@@ -1,16 +1,16 @@
 import React from "react";
-import {MindTest, withChildren} from "../types/common";
+import {MindTestItem, withChildren} from "../types/common";
 import {dummy} from "../utils/dummy";
 
 type testProvider = {
-    testItemList: MindTest[],
-    setTestItemList: React.Dispatch<React.SetStateAction<MindTest[]>>
+    testItemList: MindTestItem[],
+    setTestItemList: React.Dispatch<React.SetStateAction<MindTestItem[]>>
 }
 
 export const TestContext = React.createContext<testProvider | undefined>(undefined);
 
 export const TestProvider = ({children}: withChildren) => {
-    const [testItemList, setTestItemList] = React.useState<MindTest[]>([...dummy]);
+    const [testItemList, setTestItemList] = React.useState<MindTestItem[]>([...dummy]);
 
     return (
         <TestContext.Provider value={{

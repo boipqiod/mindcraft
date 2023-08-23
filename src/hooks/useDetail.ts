@@ -1,13 +1,13 @@
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {MindTest} from "../types/common";
+import {MindTestItem} from "../types/common";
 import {useTest} from "./useTest";
 import {FromUtil} from "../utils/FromUtil";
 import {usePage} from "./utils/usePage";
 
 export const useDetail = () => {
     const { id } = useParams();
-    const [item, setItem] = useState<MindTest>()
+    const [item, setItem] = useState<MindTestItem>()
 
     const {getTestDetail} = useTest()
     const {toMain, toBack} = usePage()

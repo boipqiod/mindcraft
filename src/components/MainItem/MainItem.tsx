@@ -56,15 +56,12 @@ export const MainItem = (props: MainItemProps) => {
     }
 
 
-    //각 카운트 아이템
-
-
     return (
         <Box
             pos={"relative"}
             aspectRatio={{base: 3/4.8, sm: 3/4.8}}
-            minW={{base: "100%", sm: "calc(100%/2 - 14px)", md: "calc(100%/3 - 14px)"}}
-            w={{base: "100%", sm: "calc(100%/2 - 14px)", md: "calc(100%/3 - 14px)"}}
+            minW={{base: "100%", sm: "calc(100%/2 - 14px)", md: "calc(100%/3 - 16px)"}}
+            w={{base: "100%", sm: "calc(100%/2 - 14px)", md: "calc(100%/3 - 16px)"}}
             boxShadow={"0px 4px 4px 0px rgba(0, 0, 0, 0.25);"}
             alignItems={"start"}
             borderRadius={4}
@@ -109,6 +106,7 @@ export const MainItem = (props: MainItemProps) => {
                     {/*타이틀*/}
                     <Text
                         isTruncated
+                        fontSize={"12px"}
                     >
                         {props.title}
                     </Text>
