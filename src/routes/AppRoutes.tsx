@@ -1,17 +1,16 @@
 import React from "react";
-import {Routes, Route, HashRouter, BrowserRouter} from "react-router-dom";
+import {Routes, Route, HashRouter} from "react-router-dom";
 import {AppLayout} from "../layout/AppLayout";
 import {Main} from "../pages/Main";
 import {SignIn} from "../pages/SignIn";
 import {Register} from "../pages/Register";
 import {Detail} from "../pages/Detail";
-import {PrivateRoutes} from "./PrivateRoutes";
 import {Create} from "../pages/Create";
 
 export const AppRoutes = () => {
 
     return (
-        <BrowserRouter basename="/mindcraft/build">
+        <HashRouter>
             <AppLayout>
                 <Routes>
                     <Route path='/' element={<Main />}/>
@@ -24,6 +23,6 @@ export const AppRoutes = () => {
                     <Route path='/create' element={<Create />}/>
                 </Routes>
             </AppLayout>
-        </BrowserRouter>
+        </HashRouter>
     )
 }

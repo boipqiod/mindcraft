@@ -23,7 +23,6 @@ export const Detail = () => {
                 <meta property="og:description" content={item?.description}/>
             </Helmet>
 
-
             <Stack
                 pos={"relative"}
                 alignItems={"center"}
