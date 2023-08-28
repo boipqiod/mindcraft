@@ -34,6 +34,7 @@ export type MindTestResultItem = {
     image: string
 }
 
+
 export type MindTestQueryItem = {
     step: number
     text: string

@@ -210,13 +210,6 @@ export const Create = () => {
                     width={"full"}
                     overflow={"hidden"}
                     id={"result-item-list"}
-                    sx={{
-                        '&::-webkit-scrollbar': {
-                            display: 'none'
-                        },
-                        scrollbarWidth: 'none',
-                        msOverflowStyle: 'none'
-                    }}
                 >
                     <Stack
                         direction={"row"}

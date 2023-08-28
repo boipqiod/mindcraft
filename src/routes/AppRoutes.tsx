@@ -6,6 +6,7 @@ import {SignIn} from "../pages/SignIn";
 import {Register} from "../pages/Register";
 import {Detail} from "../pages/Detail";
 import {Create} from "../pages/Create";
+import {Process} from "../pages/Process";
 
 export const AppRoutes = () => {
 
@@ -15,7 +16,7 @@ export const AppRoutes = () => {
                 <Routes>
                     <Route path='/' element={<Main />}/>
                     <Route path='/test/:id' element={<Detail />}/>
-                    <Route path='/test/:id/play' element={<Detail />}/>
+                    <Route path='/test/:id/play' element={<Process />}/>
 
                     <Route path='/signin' element={<SignIn />}/>
                     <Route path='/register' element={<Register />}/>

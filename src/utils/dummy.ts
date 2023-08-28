@@ -1,4 +1,4 @@
-import { MindTestItem } from "../types/common";
+import {MindTestItem, MindTestQueryItem} from "../types/common";
 
 import demo1 from "../assets/demo1.png";
 import demo2 from "../assets/demo2.png";
@@ -40,3 +40,77 @@ export const dummy: MindTestItem[] = [
     { id: 19, title: "취미 적합도 테스트", playedCount: 325, sharedCount: 22, description: "당신에게 어울리는 취미를 찾아보세요.", url: demo4, userId: 119 },
     { id: 20, title: "인생 가치관 테스트", playedCount: 500, sharedCount: 35, description: "인생에서 중요하게 생각하는 가치관은 무엇인가요?", url: demo7, userId: 120 },
   ];
+
+
+export const testDetialDummy: MindTestQueryItem[] = [
+    {
+        step: 1,
+        text: "당신이 밥을 먹을 때는?",
+        answers: [
+            {
+                text: "급하게 먹는다.",
+                resultIndex: 0,
+            },
+            {
+                text: "천천히 먹는다.",
+                resultIndex: 1,
+            },
+        ],
+    },
+    {
+        step: 2,
+        text: "주말에는 보통 무엇을 하시나요?",
+        answers: [
+            {
+                text: "친구와 만나 놀기",
+                resultIndex: 0,
+            },
+            {
+                text: "집에서 쉬기",
+                resultIndex: 1,
+            },
+        ],
+    },
+    {
+        step: 3,
+        text: "새로운 기술을 배울 때 나는?",
+        answers: [
+            {
+                text: "빠르게 시도해보려 한다.",
+                resultIndex: 0,
+            },
+            {
+                text: "주변 지원을 받아가며 천천히 익힌다.",
+                resultIndex: 1,
+            },
+        ],
+    },
+    {
+        step: 4,
+        text: "여행 가기 전에 나는?",
+        answers: [
+            {
+                text: "세부 일정을 정확하게 짜놓는 편이다.",
+                resultIndex: 0,
+            },
+            {
+                text: "대략적인 계획만 세우고 자유롭게 다니는 편이다.",
+                resultIndex: 1,
+            },
+        ],
+    },
+    {
+        step: 5,
+        text: "스트레스를 받았을 때 나의 해소 방법은?",
+        answers: [
+            {
+                text: "운동하거나 외출하여 스트레스를 푼다.",
+                resultIndex: 0,
+            },
+            {
+                text: "독서나 명상을 통해 스트레스를 해소한다.",
+                resultIndex: 1,
+            },
+        ],
+    },
+];
