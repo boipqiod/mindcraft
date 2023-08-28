@@ -13,7 +13,7 @@ const steps = [
 
 export const useRegister = () => {
     const {activeStep, setActiveStep} = useSteps({
-        index: 0,
+        index: 2,
         count: steps.length,
     })
 
@@ -30,6 +30,12 @@ export const useRegister = () => {
     const [loadingEmailCodeSubmit, setLoadingEmailCodeSubmit] = useState<boolean>(false);
     const [loadingRegister, setLoadingRegister] = useState<boolean>(false);
 
+
+    const [hidePassword, setHidePassword] = useState<boolean>(true);
+    const [hidePasswordCheck, setHidePasswordCheck] = useState<boolean>(true);
+
+    const handleHidePassword = () => setHidePassword(!hidePassword);
+    const handleHidePasswordCheck = () => setHidePasswordCheck(!hidePasswordCheck);
 
 
     const toNextStep = () => {
@@ -125,6 +131,12 @@ export const useRegister = () => {
 
         nickname, image,
         password, passwordCheck,
+
+        hidePassword,
+        hidePasswordCheck,
+
+        handleHidePassword,
+        handleHidePasswordCheck,
 
         requestCodeSend,
         requestCodeSubmit,

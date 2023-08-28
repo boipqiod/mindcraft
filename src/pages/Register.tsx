@@ -1,7 +1,8 @@
 import {
+    Box,
     Button, FormControl, FormLabel,
     Heading, HStack, Image,
-    Input, PinInput, PinInputField,
+    Input, InputGroup, InputRightElement, PinInput, PinInputField,
     Stack,
     Step,
     StepIcon,
@@ -14,10 +15,11 @@ import {
 import React from "react";
 import {useRegister} from "../hooks/useRegister";
 import {colors} from "../types/common";
+import {ViewIcon, ViewOffIcon} from "@chakra-ui/icons";
 
 export function Register() {
-    const register = useRegister()
-    const activeStepText = register.steps[register.activeStep].description
+    const hook = useRegister()
+    const activeStepText = hook.steps[hook.activeStep].description
 
     const firstStep = () => {
         return (
@@ -29,15 +31,15 @@ export function Register() {
                         placeholder='mindcraft@example.com'
                         mb={3}
                         type='email'
-                        value={register.email}
-                        onChange={register.handleEmailChange}
+                        value={hook.email}
+                        onChange={hook.handleEmailChange}
                     />
                     <Button
                         width={"100%"}
                         color={"white"}
                         bg={colors.key}
-                        onClick={register.requestCodeSend}
-                        isLoading={register.loadingEmailCode}
+                        onClick={hook.requestCodeSend}
+                        isLoading={hook.loadingEmailCode}
                     >
                         인증 메일 발송</Button>
                 </FormControl>
@@ -52,8 +54,8 @@ export function Register() {
                     <FormLabel>인증 번호</FormLabel>
                     <HStack>
                         <PinInput
-                            onComplete={register.requestCodeSubmit}
-                            isDisabled={register.loadingEmailCodeSubmit}
+                            onComplete={hook.requestCodeSubmit}
+                            isDisabled={hook.loadingEmailCodeSubmit}
                         >
                             <PinInputField/>
                             <PinInputField/>
@@ -68,61 +70,116 @@ export function Register() {
     const thirdStep = () => {
         return (
             <>
-                <HStack width={"full"} justifyContent={"space-between"}>
-
-                    <Stack width={"55%"} display={"flex"} alignItems={"center"}>
+                <Stack
+                    direction={{base: "column", md: "row"}}
+                    width={"full"}
+                    justifyContent={"space-between"}
+                    mb={5}
+                >
+                    <Stack w={"full"}
+                           display={"flex"} alignItems={"center"}>
                         <FormControl isRequired>
                             <FormLabel>비밀번호</FormLabel>
                             {/*비밀번호 입력*/}
-                            <Input
-                                placeholder='비밀번호'
-                                mb={3}
-                                type='password'
-                                value={register.password}
-                                onChange={register.handlePasswordChange}
-                            />
-                            <Input
-                                placeholder='비밀번호 확인'
-                                mb={3}
-                                type='password'
-                                value={register.passwordCheck}
-                                onChange={register.handlePasswordCheckChange}
-                            />
+
+                            <InputGroup>
+                                <Input
+                                    placeholder='비밀번호'
+                                    mb={3}
+                                    type={hook.hidePassword ? 'password' : 'text'}
+                                    value={hook.password}
+                                    onChange={hook.handlePasswordChange}
+                                />
+                                <InputRightElement width='4.5rem'>
+                                    <Button variant={"ghost"} h='1.75rem' size='sm' onClick={hook.handleHidePassword}>
+                                        {!hook.hidePassword ? <ViewOffIcon/> : <ViewIcon/>}
+                                    </Button>
+                                </InputRightElement>
+                            </InputGroup>
+                            <InputGroup>
+                                <Input
+                                    placeholder='비밀번호 확인'
+                                    mb={3}
+                                    type={hook.hidePasswordCheck ? 'password' : 'text'}
+                                    value={hook.passwordCheck}
+                                    onChange={hook.handlePasswordCheckChange}
+                                />
+                                <InputRightElement width='4.5rem'>
+                                    <Button variant={"ghost"} h='1.75rem' size='sm'
+                                            onClick={hook.handleHidePasswordCheck}>
+                                        {!hook.hidePasswordCheck ? <ViewOffIcon/> : <ViewIcon/>}
+                                    </Button>
+                                </InputRightElement>
+                            </InputGroup>
+
                             <FormLabel>닉네임</FormLabel>
                             <Input
                                 placeholder='닉네임'
                                 mb={3}
                                 type='text'
-                                value={register.nickname}
-                                onChange={register.handleNicknameChange}
+                                value={hook.nickname}
+                                onChange={hook.handleNicknameChange}
                             />
                         </FormControl>
                     </Stack>
 
-                    <Stack width={"40%"} display={"flex"} alignItems={"center"} height={"full"}>
-                        <FormControl>
-                            <FormLabel boxSize={"full"}>
-                                프로필 이미지
-                                <Image src='gibbresh.png' fallbackSrc='https://via.placeholder.com/150'/>
-                            </FormLabel>
-                            {/*비밀번호 입력*/}
+                    <Stack
+                        w={"full"}
+                        display={"flex"}
+                        height={"full"}
+                    >
+                        <Text>대표 이미지</Text>
+                        <FormLabel
+                            m={"auto"}
+                            w={{base: "full", md: "180px"}}
+                            aspectRatio={1}
+                            borderRadius={4}
+                            bg={"gray.200"}
+                        >
+
+                            {/*이미지 및 프리뷰*/}
+                            {
+                                hook.image !== "" ?
+                                    <Image
+                                        w={"full"}
+                                        h={"full"}
+                                        objectFit={"cover"}
+                                        borderRadius={4}
+                                        src={hook.image}
+                                        alt={"심리테스트 이미지"}/> :
+                                    <Box
+                                        w={"full"}
+                                        h={"full"}
+                                        display={"flex"}
+                                        alignItems={"center"}
+                                        justifyContent={"center"}
+                                        textAlign={"center"}
+                                        color={"gray.400"}
+                                    >
+                                        <Text>
+                                            150x150
+                                        </Text>
+                                    </Box>
+                            }
+
                             <Input
-                                hidden
-                                type="file"
+                                id={"image"}
+                                onChange={hook.handleImageChange}
+                                hidden={true}
+                                type={"file"}
                                 accept="image/*"
-                                value={register.image}
-                                onChange={register.handleImageChange}
                             />
-                        </FormControl>
+                        </FormLabel>
+
                     </Stack>
 
-                </HStack>
+                </Stack>
                 <Button
                     width={"100%"}
                     color={"white"}
                     bg={colors.key}
-                    onClick={register.requestRegister}
-                    isLoading={register.loadingRegister}
+                    onClick={hook.requestRegister}
+                    isLoading={hook.loadingRegister}
                 >
                     회원 가입 요청</Button>
             </>
@@ -131,7 +188,7 @@ export function Register() {
 
     return (
         <Stack
-            maxW={"400px"}
+            maxW={"500px"}
             width={"80%"}
             height={"80%"}
             mx={"auto"}
@@ -140,12 +197,12 @@ export function Register() {
             alignItems={"center"}
         >
             <Stack
-                width={"100%"}
+                width={"60%"}
             >
                 <Text width={"100%"} textAlign={"center"}>{activeStepText}</Text>
 
-                <Stepper size='sm' index={register.activeStep} gap='1'>
-                    {register.steps.map((step, index) => (
+                <Stepper size='sm' index={hook.activeStep} gap='1'>
+                    {hook.steps.map((step, index) => (
                         <Step key={index}>
                             <StepIndicator>
                                 <StepStatus complete={<StepIcon/>}/>
@@ -159,9 +216,9 @@ export function Register() {
 
             <Heading width={"full"} textAlign={"center"} my={30}>회원 가입</Heading>
             {
-                register.activeStep === 0 ? firstStep() :
-                    register.activeStep === 1 ? secondStep() :
-                        register.activeStep === 2 ? thirdStep() : null
+                hook.activeStep === 0 ? firstStep() :
+                    hook.activeStep === 1 ? secondStep() :
+                        hook.activeStep === 2 ? thirdStep() : null
             }
         </Stack>
     )

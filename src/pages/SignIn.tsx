@@ -2,6 +2,7 @@ import React from 'react';
 import {Button, Heading, Input, InputGroup, InputRightElement, Box, Text} from "@chakra-ui/react";
 import {useSignIn} from "../hooks/useSignIn";
 import {usePage} from "../hooks/utils/usePage";
+import {ViewIcon, ViewOffIcon} from "@chakra-ui/icons";
 
 export const SignIn = () => {
     const hook = useSignIn()
@@ -59,8 +60,8 @@ export const SignIn = () => {
                 />
                 {/*보이기 버튼*/}
                 <InputRightElement width='4.5rem'>
-                    <Button h='1.75rem' size='sm' onClick={hook.handleClick}>
-                        {hook.show ? 'Hide' : 'Show'}
+                    <Button variant={"ghost"} h='1.75rem' size='sm' onClick={hook.handleClick}>
+                        {hook.show ? <ViewOffIcon /> : <ViewIcon />}
                     </Button>
                 </InputRightElement>
             </InputGroup>

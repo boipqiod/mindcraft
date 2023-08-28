@@ -19,6 +19,15 @@ export type MindTestItem = {
     userId: number;
 }
 
+export type MainTestBasicInfo = {
+    title: string,
+    description: string,
+    image: string,
+    resultCount: 3 | 4 | 5,
+    queryCount: 3 | 4 | 5,
+    answerCount: 2 | 3 | 4,
+}
+
 export type MindTestResultItem = {
     title: string
     description: string

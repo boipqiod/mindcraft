@@ -33,7 +33,6 @@ function App() {
                   </AuthProvider>
               </TestProvider>
           </HelmetProvider>
-
       </ChakraProvider>
   );
 }
